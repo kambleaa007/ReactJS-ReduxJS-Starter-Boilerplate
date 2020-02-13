@@ -1,4 +1,4 @@
-Django==1.11
+Django==1.11.28
 rollbar==0.13.9
 requests==2.13.0
 django-webpack-loader==0.4.1
