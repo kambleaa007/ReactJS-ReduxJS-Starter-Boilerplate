@@ -1,2 +1,3 @@
 [build]
   base = "umi-app"
+  publish = "umi-app/dist/"
