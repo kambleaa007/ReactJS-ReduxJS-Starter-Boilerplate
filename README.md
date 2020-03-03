@@ -21,8 +21,8 @@ Global app with UI --> Close to Trunk @base of hugh brach, like `/app` route
 
 I) Routes
 
-1. <Route path="" component=""> --> inside <Switch> --> renders first matched component
-2. <Route component=""> NO path attribute --> Error Handling when no path gets Matched
+1. `<Route path="" component="">` --> inside `<Switch>` --> renders first matched component
+2. `<Route component="">` NO path attribute --> Error Handling when no path gets Matched
 
    Each Route have -->
    Container Folder
