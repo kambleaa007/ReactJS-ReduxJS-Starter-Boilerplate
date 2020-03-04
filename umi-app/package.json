@@ -26,7 +26,7 @@
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
     "ui": "umi ui",
-    "predeploy": "npm run dist",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "husky": {
