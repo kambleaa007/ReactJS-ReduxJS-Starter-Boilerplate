@@ -89,8 +89,8 @@ https://ant.design/
 #### Directory Stucture
 
 1. .happypack
-2. dist
-3. node_modules
+2. dist --> build minimised code gets created here, after `npm build`
+3. node_modules --> `npm i` or `yarn install`
 4. server
 5. src
 
