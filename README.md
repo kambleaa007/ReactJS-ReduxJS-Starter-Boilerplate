@@ -88,6 +88,45 @@ https://ant.design/
 
 #### Directory Stucture
 
+1. .happypack
+2. dist
+3. node_modules
+4. server
+5. src
+
+   1. components
+      use readymade files here directly
+   2. containers
+      1. App
+         1. App.js
+            export class AppComponent extends Component{}
+            const mapStateToProps = (state) => ({});
+            AppComponent.propTypes = {};
+            export const App = connect(mapStateToProps, {})(HOCsComponentHere(AppComponent, NotFoundImportedFromComponent));
+         2. App.module.scss
+            styling
+      2. AppContainer
+         export function AppContainerComponent(props) {}
+         export const AppContainer = connect(mapStateToProps)(AppContainerComponent);
+
+index.js----> just export all above components, thats all
+export { App } from './App/App';
+
+3.  HOCS
+4.  images
+5.  lib
+6.  modules
+7.  routes
+8.  store
+9.  styles
+10. utils
+11. vendors
+    index.js
+    reducers.js
+    sagas.js
+
+12. webpack
+
 # coming....
 
 Build Enterprise ReactJS-ReduxJS-Saga-WebPack-Django-Starter-Boilerplate Web Application
