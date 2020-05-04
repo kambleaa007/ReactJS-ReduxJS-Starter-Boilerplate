@@ -98,7 +98,7 @@ https://ant.design/
       use readymade files here directly
    2. containers
       Makes use of .propTypes and .defaultTypes for Clean code with Linting Errors like TypeScipt compile time errors....
-      
+      Lint will act upon while passing unvalidated props
       1. App
          1. App.js
             export class AppComponent extends Component{}
@@ -128,6 +128,65 @@ export { App } from './App/App';
     sagas.js
 
 12. webpack
+
+#### Component vs PureComponent vs Stateless Functional Component
+
+##### when to move your code into a component, ask yourself:
+
+i) Is your code’s functionality becoming unwieldy?
+ii) Does it represent its own thing?
+iii) Are you going to reuse your code?
+
+##### If any of these question’s answer is yes, then you need to move your code into a component.
+
+      Makes use of .propTypes and .defaultTypes for Clean code with Linting Errors like TypeScipt compile time errors....
+      Lint will act upon while passing unvalidated props,
+      Here assume, `userIsLoaded` is not required, so, added false in `defaultProps`,
+      If it is required, then we don’t have to define a default prop for it.
+
+##### Pure Component
+
+export default class Profile extends PureComponent {
+
+static propTypes = {
+userIsLoaded: PropTypes.bool,
+user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
+}
+
+static defaultProps = {
+userIsLoaded: false,
+}
+
+render() {
+<Compo1 />
+<Compo2 />
+<Compo3 />
+<Compo4 />
+}
+
+}// pure component
+
+##### Stateless Functional Component
+
+components that are not using any kind of state, refs, or lifecycle methods.
+you are defining your component as a constant function that returns some data.
+In simple words, stateless functional components are just functions that return JSX.
+
+const Billboard = () => (
+<ZoneBlack>
+<Heading>React</Heading>
+
+<div className="billboard_product">
+<Link className="billboard_product-image" to="/">
+<img alt="#" src="#">
+</Link>
+<div className="billboard_product-details">
+<h3 className="sub">React</h3>
+<p>Lorem Ipsum</p>
+</div>
+</div>
+</ZoneBlack>
+);
 
 # coming....
 
