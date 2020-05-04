@@ -64,7 +64,7 @@ Remeber,
 ReactJS Doesnt Support Inheritance --> HOCs are way to do so.....
 
 #### Webpack for ReactJS App
-
+`
 "scripts": {
 "build": "webpack --mode production"
 }
@@ -72,7 +72,7 @@ ReactJS Doesnt Support Inheritance --> HOCs are way to do so.....
 "scripts": {
 "start": "webpack-dev-server --open --mode development",
 "build": "webpack --mode production"
-}
+}`
 
 Using HappyPack (https://github.com/amireh/happypack)
 npm install --save-dev happypack
@@ -101,18 +101,18 @@ https://ant.design/
       Lint will act upon while passing unvalidated props
       1. App
          1. App.js
-            export class AppComponent extends Component{}
-            const mapStateToProps = (state) => ({});
-            AppComponent.propTypes = {};
-            export const App = connect(mapStateToProps, {})(HOCsComponentHere(AppComponent, NotFoundImportedFromComponent));
+            `export class AppComponent extends Component{}`
+            `const mapStateToProps = (state) => ({});`
+            `AppComponent.propTypes = {};`
+            `export const App = connect(mapStateToProps, {})(HOCsComponentHere(AppComponent, NotFoundImportedFromComponent));`
          2. App.module.scss
             styling
-      2. AppContainer
-         export function AppContainerComponent(props) {}
-         export const AppContainer = connect(mapStateToProps)(AppContainerComponent);
+      2. AppContainer 
+         `export function AppContainerComponent(props) {}`
+         `export const AppContainer = connect(mapStateToProps)(AppContainerComponent);`
 
 index.js----> just export all above components, thats all
-export { App } from './App/App';
+`export { App } from './App/App';`
 
 3.  HOCS
 4.  images
@@ -148,21 +148,21 @@ iii) Are you going to reuse your code?
 
 export default class Profile extends PureComponent {
 
-static propTypes = {
-userIsLoaded: PropTypes.bool,
-user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
-}
+   `static propTypes = {
+   userIsLoaded: PropTypes.bool,
+   user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
+   }
 
-static defaultProps = {
-userIsLoaded: false,
-}
+   static defaultProps = {
+   userIsLoaded: false,
+   }
 
-render() {
-<Compo1 />
-<Compo2 />
-<Compo3 />
-<Compo4 />
-}
+   render() {
+      <Compo1 />
+      <Compo2 />
+      <Compo3 />
+      <Compo4 />
+   }`
 
 }// pure component
 
@@ -173,19 +173,9 @@ you are defining your component as a constant function that returns some data.
 In simple words, stateless functional components are just functions that return JSX.
 
 const Billboard = () => (
-<ZoneBlack>
-<Heading>React</Heading>
-
-<div className="billboard_product">
-<Link className="billboard_product-image" to="/">
-<img alt="#" src="#">
-</Link>
-<div className="billboard_product-details">
-<h3 className="sub">React</h3>
-<p>Lorem Ipsum</p>
-</div>
-</div>
-</ZoneBlack>
+      `<Compo />
+      React
+      <Compo />`
 );
 
 #### Passing Function to Children Components
