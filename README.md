@@ -175,15 +175,6 @@ In simple words, stateless functional components are just functions that return 
 const Billboard = () => (
       <ZoneBlack>
       <Heading>React</Heading>
-      <div className="billboard_product">
-      <Link className="billboard_product-image" to="/">
-      <img alt="#" src="#">
-      </Link>
-      <div className="billboard_product-details">
-      <h3 className="sub">React</h3>
-      <p>Lorem Ipsum</p>
-      </div>
-      </div>
       </ZoneBlack>
 );
 
