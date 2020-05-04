@@ -64,6 +64,7 @@ Remeber,
 ReactJS Doesnt Support Inheritance --> HOCs are way to do so.....
 
 #### Webpack for ReactJS App
+
 `
 "scripts": {
 "build": "webpack --mode production"
@@ -107,7 +108,7 @@ https://ant.design/
             `export const App = connect(mapStateToProps, {})(HOCsComponentHere(AppComponent, NotFoundImportedFromComponent));`
          2. App.module.scss
             styling
-      2. AppContainer 
+      2. AppContainer
          `export function AppContainerComponent(props) {}`
          `export const AppContainer = connect(mapStateToProps)(AppContainerComponent);`
 
@@ -148,21 +149,21 @@ iii) Are you going to reuse your code?
 
 export default class Profile extends PureComponent {
 
-   `static propTypes = {
-   userIsLoaded: PropTypes.bool,
-   user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
-   }
+`static propTypes = {
+userIsLoaded: PropTypes.bool,
+user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
+}
 
-   static defaultProps = {
-   userIsLoaded: false,
-   }
+static defaultProps = {
+userIsLoaded: false,
+}
 
-   render() {
-      <Compo1 />
-      <Compo2 />
-      <Compo3 />
-      <Compo4 />
-   }`
+render() {
+<Compo1 />
+<Compo2 />
+<Compo3 />
+<Compo4 />
+}`
 
 }// pure component
 
@@ -173,24 +174,46 @@ you are defining your component as a constant function that returns some data.
 In simple words, stateless functional components are just functions that return JSX.
 
 const Billboard = () => (
-      `<Compo />
-      React
-      <Compo />`
+`<Compo /> React <Compo />`
 );
 
 #### Passing Function to Children Components
 
 ##### Function Components
 
+We should avoid method binding inside render because during re-rendering,
+it will create the new methods instead of using the old one, that will affect the performance,
+
 In function components, we have currently no other choice,
 pass the callback directly from the props to the child component or to create an inline arrow function
 `const myButton = ({ onClick }) => (<button onClick={() =>onClick({someData}) }>Click</button>);`
+
+1. You generate a function on every render, which will obviously have a new reference.
+2. If the component you pass this generated function to is extending PureComponent,
+   it will not be able to bail out on rerendering, even if the actual data has not changed.
+
+#### 1) You can force a specific value of this with a function’s call, apply and bind methods.
+
+#### 2) If the function is an => arrow function, this is hard-wired to refer to the value of this at the location where the function was defined.
+
+Once you’ve passed a method as a callback, you have no idea how it will be called, and thus no idea what this will be.
+Solution
+In an arrow function,
+this means the same thing within the function body as it does outside of it.
+Which means that if you use arrow functions within your component’s render or lifecycle methods,
+they can use this and this.something with no surprises.
+
+##### Arrows prevent this bugs
+
+Arrow functions don’t redefine the value of this within their function body.
+This makes it a lot easier to predict their behavior when passed as callbacks,
+and prevents bugs caused by use of this within callbacks.
 
 ##### Class-Based Components
 
 In class-based components we have a choice: either to generate an inline callback or to use a class method,
 
-`class MyComp extends Component{
+class MyComp extends Component{
 constructor(props){
 super(props);
 this.onClick = this.onClick.bind(this);
@@ -206,7 +229,7 @@ return(
 )
 }
 
-}`
+}
 
 # coming....
 
