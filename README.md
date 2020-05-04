@@ -173,9 +173,9 @@ you are defining your component as a constant function that returns some data.
 In simple words, stateless functional components are just functions that return JSX.
 
 const Billboard = () => (
-      <ZoneBlack>
-      <Heading>React</Heading>
-      </ZoneBlack>
+      <Compo />
+      React
+      <Compo />
 );
 
 # coming....
