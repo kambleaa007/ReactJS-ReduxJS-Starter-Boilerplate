@@ -97,6 +97,8 @@ https://ant.design/
    1. components
       use readymade files here directly
    2. containers
+      Makes use of .propTypes and .defaultTypes for Clean code with Linting Errors like TypeScipt compile time errors....
+      
       1. App
          1. App.js
             export class AppComponent extends Component{}
