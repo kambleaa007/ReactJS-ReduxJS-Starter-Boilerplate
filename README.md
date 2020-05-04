@@ -148,21 +148,21 @@ iii) Are you going to reuse your code?
 
 export default class Profile extends PureComponent {
 
-static propTypes = {
-userIsLoaded: PropTypes.bool,
-user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
-}
+   static propTypes = {
+   userIsLoaded: PropTypes.bool,
+   user: PropTypes.shape({\_id: PropTypes.string,}).isRequired,
+   }
 
-static defaultProps = {
-userIsLoaded: false,
-}
+   static defaultProps = {
+   userIsLoaded: false,
+   }
 
-render() {
-<Compo1 />
-<Compo2 />
-<Compo3 />
-<Compo4 />
-}
+   render() {
+      <Compo1 />
+      <Compo2 />
+      <Compo3 />
+      <Compo4 />
+   }
 
 }// pure component
 
@@ -173,19 +173,18 @@ you are defining your component as a constant function that returns some data.
 In simple words, stateless functional components are just functions that return JSX.
 
 const Billboard = () => (
-<ZoneBlack>
-<Heading>React</Heading>
-
-<div className="billboard_product">
-<Link className="billboard_product-image" to="/">
-<img alt="#" src="#">
-</Link>
-<div className="billboard_product-details">
-<h3 className="sub">React</h3>
-<p>Lorem Ipsum</p>
-</div>
-</div>
-</ZoneBlack>
+      <ZoneBlack>
+      <Heading>React</Heading>
+      <div className="billboard_product">
+      <Link className="billboard_product-image" to="/">
+      <img alt="#" src="#">
+      </Link>
+      <div className="billboard_product-details">
+      <h3 className="sub">React</h3>
+      <p>Lorem Ipsum</p>
+      </div>
+      </div>
+      </ZoneBlack>
 );
 
 # coming....
