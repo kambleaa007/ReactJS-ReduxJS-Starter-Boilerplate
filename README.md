@@ -188,6 +188,36 @@ const Billboard = () => (
 </ZoneBlack>
 );
 
+#### Passing Function to Children Components
+
+##### Function Components
+
+In function components, we have currently no other choice,
+pass the callback directly from the props to the child component or to create an inline arrow function
+`const myButton = ({ onClick }) => (<button onClick={() =>onClick({someData}) }>Click</button>);`
+
+##### Class-Based Components
+
+In class-based components we have a choice: either to generate an inline callback or to use a class method,
+
+`class MyComp extends Component{
+constructor(props){
+super(props);
+this.onClick = this.onClick.bind(this);
+}
+
+onClick(){
+this.props.onClick({someData});
+}
+
+render(){
+return(
+<Child onClick={this.onClick} />
+)
+}
+
+}`
+
 # coming....
 
 Build Enterprise ReactJS-ReduxJS-Saga-WebPack-Django-Starter-Boilerplate Web Application
